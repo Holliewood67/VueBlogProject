@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Site</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to my Blog Site!</h1>
+
+    <div id="blogPosts">
+        <blog-post 
+        v-for='post in posts'
+        v-bind:blogpost='post'>
+
+        </blog-post>
+    </div>
+
+    <div id="blogPostCreation">
+        <h2>Make a new blog post</h2>
+        <input v-model='title'><br>
+        <input v-model='username'><br>
+        <input v-model='date'><br>
+        <input v-model='content'><br>
+        <button v-on:click='publishPost'>Publish Post</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
